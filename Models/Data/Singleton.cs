@@ -5,7 +5,20 @@ using System.Threading.Tasks;
 
 namespace Lab0.Models.Data
 {
-    public class Singleton
+    public sealed class Singleton
     {
+        public readonly static Singleton _instance = new Singleton();
+        public List<Client> ClientList;
+        private Singleton()
+        {
+            ClientList = new List<Client>();
+        }
+        public static Singleton Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
     }
 }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Lab0.Models.Data;
 
 namespace Lab0.Controllers
 {
@@ -12,7 +13,7 @@ namespace Lab0.Controllers
         // GET: ClientController
         public ActionResult Index()
         {
-            return View();
+            return View(Singleton.Instance.ClientList);
         }
 
         // GET: ClientController/Details/5
@@ -34,6 +35,14 @@ namespace Lab0.Controllers
         {
             try
             {
+                var newClient = new Models.Client
+                {
+                    Name = collection["Nombre"],
+                    LName = collection["Apellido"],
+                    Phone = Convert.ToInt32(collection["Número Telelfónico"]),
+                    Description = collection["Descripción de venta"]
+                };
+                Singleton.Instance.ClientList.Add(newClient);   
                 return RedirectToAction(nameof(Index));
             }
             catch

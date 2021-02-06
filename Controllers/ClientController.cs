@@ -17,7 +17,7 @@ namespace Lab0.Controllers
         }
 
         // GET: ClientController/Details/5
-        public ActionResult Details()
+        public ActionResult Details( )
         {
             return View();
         }
@@ -50,47 +50,16 @@ namespace Lab0.Controllers
                 return View();
             }
         }
-
-        // GET: ClientController/Edit/5
-        public ActionResult Edit()
+        public ActionResult SortN()
         {
-            return View();
+            Singleton.Instance1.Sort.SortN(Singleton.Instance.ClientList);
+            return Index();
         }
 
-        // POST: ClientController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult SortL()
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: ClientController/Delete/5
-        public ActionResult Delete()
-        {
-            return View();
-        }
-
-        // POST: ClientController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            Singleton.Instance1.Sort.SortL(Singleton.Instance.ClientList);
+            return Index();
         }
     }
 }

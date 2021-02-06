@@ -37,10 +37,10 @@ namespace Lab0.Controllers
             {
                 var newClient = new Models.Client
                 {
-                    Name = collection["Nombre"],
-                    LName = collection["Apellido"],
-                    Phone = Convert.ToInt32(collection["Número Telelfónico"]),
-                    Description = collection["Descripción de venta"]
+                    Name = collection["Name"],
+                    LName = collection["LName"],
+                    Phone = Convert.ToInt32(collection["Phone"]),
+                    Description = collection["Description"]
                 };
                 Singleton.Instance.ClientList.Add(newClient);   
                 return RedirectToAction(nameof(Index));

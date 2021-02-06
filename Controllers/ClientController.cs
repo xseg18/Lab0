@@ -17,9 +17,10 @@ namespace Lab0.Controllers
         }
 
         // GET: ClientController/Details/5
-        public ActionResult Details( )
+        public ActionResult Details(int ID)
         {
-            return View();
+            var ViewClient = Singleton.Instance.ClientList.Find(x => x.Phone == ID);
+            return View(ViewClient);
         }
 
         // GET: ClientController/Create
@@ -53,13 +54,13 @@ namespace Lab0.Controllers
         public ActionResult SortN()
         {
             Singleton.Instance1.Sort.SortN(Singleton.Instance.ClientList);
-            return Index();
+            return RedirectToAction(nameof(Index));
         }
 
         public ActionResult SortL()
         {
             Singleton.Instance1.Sort.SortL(Singleton.Instance.ClientList);
-            return Index();
+            return RedirectToAction(nameof(Index));
         }
     }
 }

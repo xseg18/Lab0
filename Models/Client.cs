@@ -23,9 +23,9 @@ namespace Lab0.Models
         public void SortN (List<Client> CL)
         {
             Client aux = new Client();
-            for (int i = 0; i < CL.Count() - 1; i++)
+            for (int i = 0; i < CL.Count(); i++)
             {
-                for (int j = 0; j < i; j++)
+                for (int j = 0; j < CL.Count - i - 1; j++)
                 {
                     if (CL[j].Name[0] > CL[j + 1].Name[0])
                     {
@@ -42,7 +42,7 @@ namespace Lab0.Models
             Client aux = new Client();
             for (int i = 0; i < CL.Count() - 1; i++)
             {
-                for (int j = 0; j < i; j++)
+                for (int j = 0; j < CL.Count - i - 1; j++)
                 {
                     if (CL[j].LName[0] > CL[j + 1].LName[0])
                     {

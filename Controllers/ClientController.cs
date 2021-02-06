@@ -17,7 +17,7 @@ namespace Lab0.Controllers
         }
 
         // GET: ClientController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details()
         {
             return View();
         }
@@ -52,7 +52,7 @@ namespace Lab0.Controllers
         }
 
         // GET: ClientController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit()
         {
             return View();
         }
@@ -73,7 +73,7 @@ namespace Lab0.Controllers
         }
 
         // GET: ClientController/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete()
         {
             return View();
         }
